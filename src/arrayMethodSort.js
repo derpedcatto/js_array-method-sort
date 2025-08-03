@@ -13,10 +13,10 @@ function applyCustomSort() {
     }
 
     for (let i = 0; i < this.length - 1; i++) {
-      let minValue = this[i] + '';
+      let minValue = this[i];
 
       for (let j = i + 1; j < this.length; j++) {
-        const currentValue = this[j] + '';
+        const currentValue = this[j];
 
         if (compareFunction) {
           const result = compareFunction(minValue, currentValue);
@@ -30,7 +30,7 @@ function applyCustomSort() {
           continue;
         }
 
-        if (currentValue < minValue) {
+        if (String(currentValue) < String(minValue)) {
           swapNums(this, i, j);
 
           minValue = currentValue;
